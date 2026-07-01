@@ -1,0 +1,48 @@
+.nav-item{
+  margin-left: 26px;
+  padding: 5px;
+  font-size: 18px
+}
+
+.linksDiv a{
+display: inline-block;
+text-decoration: none;
+color: rgb(83, 83, 83);
+margin-bottom: 0.3rem;
+font-size: 0.8rem;
+}
+
+.footerLinks{
+display: flex;
+gap: 1.2rem;
+margin-top: 2rem;
+margin-bottom: 2rem;
+margin-left: 9rem;
+}
+.footerLinks a{
+  text-decoration: none;
+  color: rgb(111, 107, 107);
+  font-size: 0.8rem;
+}
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 10px 50px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 2rem;
+}
