@@ -8,6 +8,7 @@ function Login() {
         username: '',
         password: ''
     });
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,14 +16,16 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError('');
         try {
             const response = await axios.post("http://localhost:8080/login", formData, {
                 withCredentials: true,
             });
             console.log('Login Response:', response.data);
-            // Optionally add redirection to a dashboard here on success
+            window.location.href = "http://localhost:5174";
         } catch (error) {
             console.error('Login error:', error.response?.data || error.message);
+            setError(error.response?.data?.message || error.response?.data?.error || 'Invalid username or password');
         }
     };
 
@@ -31,6 +34,8 @@ function Login() {
             <div className="auth-card">
                 <h1 className="auth-title">Welcome Back</h1>
                 <p className="auth-subtitle">Log in to your account to continue.</p>
+                
+                {error && <div className="auth-error-message">{error}</div>}
                 
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <div className="input-group">

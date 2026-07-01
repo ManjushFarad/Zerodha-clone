@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import axios from 'axios'
 import HomePage from './landing_page/home/HomePage'
 import Signup from './landing_page/signup/Signup'
 import Login from './landing_page/login/Login'
@@ -13,6 +14,7 @@ import './index.css'
 import ProductPage from './landing_page/products/ProductPage'
 import NotFound from './landing_page/NotFound'
 
+axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

@@ -18,9 +18,16 @@ const uri = process.env.MONGO_URL;
 
 mongoose.connect(uri);
 
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
@@ -246,6 +253,29 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", passport.authenticate("local"), (req, res) => {
   res.json({ message: "User logged in successfully", user: req.user });
+});
+
+app.get("/check-auth", (req, res) => {
+  if (req.isAuthenticated()) {
+    res.json({ authenticated: true, user: req.user });
+  } else {
+    res.json({ authenticated: false });
+  }
+});
+
+app.post("/logout", (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    req.session.destroy((err) => {
+      if (err) {
+        return next(err);
+      }
+      res.clearCookie("connect.sid");
+      res.json({ message: "Logged out successfully" });
+    });
+  });
 });
 
 app.get("/allHoldings", async (req, res) => {

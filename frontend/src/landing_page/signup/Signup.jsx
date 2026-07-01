@@ -9,6 +9,7 @@ function Signup() {
         email: '',
         password: ''
     });
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,9 +17,16 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/signup", formData, {
-            withCredentials: true,
-        });
+        setError('');
+        try {
+            await axios.post("http://localhost:8080/signup", formData, {
+                withCredentials: true,
+            });
+            window.location.href = "http://localhost:5174";
+        } catch (error) {
+            console.error('Signup error:', error.response?.data || error.message);
+            setError(error.response?.data?.error || 'Signup failed. Please try again.');
+        }
     };
 
     return (
@@ -26,6 +34,8 @@ function Signup() {
             <div className="auth-card">
                 <h1 className="auth-title">Create Account</h1>
                 <p className="auth-subtitle">Join us to start investing today.</p>
+
+                {error && <div className="auth-error-message">{error}</div>}
 
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <div className="input-group">
