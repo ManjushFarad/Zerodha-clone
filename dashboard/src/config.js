@@ -1,11 +1,11 @@
-const API_URL =
-    import.meta.env.VITE_USE_RENDER === "true"
-        ? import.meta.env.VITE_RENDER_API
-        : import.meta.env.VITE_LOCAL_API;
+const isRender = window.location.hostname.includes("onrender.com");
 
-export const FRONTEND_URL =
-    import.meta.env.VITE_USE_RENDER === "true"
-        ? import.meta.env.VITE_RENDER_FRONTEND
-        : import.meta.env.VITE_LOCAL_FRONTEND;
+const API_URL = isRender
+    ? "https://zerodha-backend-zi92.onrender.com"
+    : "http://localhost:8080";
+
+export const FRONTEND_URL = isRender
+    ? "https://zerodha-frontend-w1qf.onrender.com"
+    : "http://localhost:5173";
 
 export default API_URL;
