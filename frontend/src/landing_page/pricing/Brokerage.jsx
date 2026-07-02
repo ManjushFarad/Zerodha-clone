@@ -3,10 +3,10 @@ import React from "react";
 function Brokerage() {
   return (
     <div className="container">
-      <div className="row p-5 mt-5 text-center border-top">
-        <div className="col-8 p-4">
+      <div className="row p-3 p-md-5 mt-5 text-center border-top">
+        <div className="col-12 col-md-8 p-3 p-md-4 text-md-start">
           <a href="" style={{ textDecoration: "none" }}>
-            <h3 className="fs-5 mb-5">Brokerage calculator</h3>
+            <h3 className="fs-5 mb-4 text-center text-md-start">Brokerage calculator</h3>
           </a>
           <ul
             style={{ textAlign: "left", lineHeight: "2.5", fontSize: "12px" }}
@@ -35,7 +35,7 @@ function Brokerage() {
             </li>
           </ul>
         </div>
-        <div className="col-4 p-4">
+        <div className="col-12 col-md-4 p-3 p-md-4">
           <a href="" style={{ textDecoration: "none" }}>
             <h3 className="fs-5">List of charges</h3>
           </a>

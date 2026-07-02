@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Apps from "./Apps";
@@ -11,11 +11,13 @@ import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
 
 const Dashboard = () => {
+  const [isWatchlistActive, setIsWatchlistActive] = useState(false);
+
   return (
     <GeneralContextProvider>
-      <div className="dashboard-container">
+      <div className={`dashboard-container ${isWatchlistActive ? "watchlist-active" : ""}`}>
         <WatchList />
-        <div className="content">
+        <div className="content" onClick={() => setIsWatchlistActive(false)}>
           <Routes>
             <Route exact path="/" element={<Summary />} />
             <Route path="/orders" element={<Orders />} />
@@ -25,6 +27,14 @@ const Dashboard = () => {
             <Route path="/apps" element={<Apps />} />
           </Routes>
         </div>
+
+        <button 
+          className="watchlist-toggle-btn" 
+          onClick={() => setIsWatchlistActive(!isWatchlistActive)}
+          aria-label="Toggle Watchlist"
+        >
+          {isWatchlistActive ? "✕ Close" : "🔍 Watchlist"}
+        </button>
       </div>
     </GeneralContextProvider>
   );

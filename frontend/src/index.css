@@ -41,8 +41,30 @@ margin-left: 9rem;
 }
 
 #supportHero input{
-  padding: 10px 50px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 991px) {
+  .footerLinks {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  #supportWrapper {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-item {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  .navbar-brand {
+    margin-left: 0.5rem !important;
+  }
 }

@@ -14,7 +14,7 @@ function CreateTicket() {
         </h1>
 
         {/* Account Opening */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
            <h4 className="fs-5 text-muted">
             <i className="fa fa-user-plus" aria-hidden="true"></i>{" "}
             Account Opening
@@ -29,7 +29,7 @@ function CreateTicket() {
         </div>
 
         {/* Your Account */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
            <h4 className="fs-5 text-muted">
             <i className="fa fa-user" aria-hidden="true"></i>{" "}
             Your Account
@@ -44,7 +44,7 @@ function CreateTicket() {
         </div>
 
         {/* Trading & Markets */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
            <h4 className="fs-5 text-muted">
             <i className="fa fa-line-chart" aria-hidden="true"></i>{" "}
             Trading & Markets
@@ -59,7 +59,7 @@ function CreateTicket() {
         </div>
 
         {/* Funds */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
            <h4 className="fs-5 text-muted">
             <i className="fa fa-credit-card" aria-hidden="true"></i>{" "}
             Funds
@@ -74,7 +74,7 @@ function CreateTicket() {
         </div>
 
         {/* Reports & Statements */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
           <h4 className="fs-5 text-muted">
            <i className="fa fa-line-chart" aria-hidden="true"></i>{" "}
             Reports & Statements
@@ -89,7 +89,7 @@ function CreateTicket() {
         </div>
 
         {/* Support & Security */}
-        <div className="col-4 p-5 mt-2 mb-2">
+        <div className="col-12 col-sm-6 col-md-4 p-3 p-md-5 mt-2 mb-2">
            <h4 className="fs-5 text-muted">
             <i className="fa fa-life-ring" aria-hidden="true"></i>{" "}
             Support & Security

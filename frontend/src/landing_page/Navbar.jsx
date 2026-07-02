@@ -6,7 +6,7 @@ function Navbar() {
     <nav class="navbar navbar-expand-lg border-bottom" style={{ backgroundColor: "white" }}>
       <div class="container-fluid">
         <Link class="navbar-brand" to="/">
-          <img src="\media\images\logo.svg" alt="" style={{ width: "25%", marginLeft: "2.3rem" }} className="mt-2 mb-2" />
+          <img src="\media\images\logo.svg" alt="" style={{ width: "130px", marginLeft: "1rem" }} className="mt-2 mb-2" />
         </Link>
         <button
           class="navbar-toggler"
@@ -20,7 +20,7 @@ function Navbar() {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style={{ marginRight: "10rem" }}>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-lg-5" style={{ marginRight: "2rem" }}>
             <li class="nav-item">
               <Link class="nav-link active" aria-current="page" to="/signup">
                 Signup

@@ -227,3 +227,56 @@
     color: #fff;
   }
   
+  @media (max-width: 768px) {
+    .container {
+      width: 92% !important;
+      left: 4% !important;
+      bottom: 24px !important;
+      height: auto !important;
+      max-height: 80vh !important;
+      position: fixed !important;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25) !important;
+      border: 1px solid #ddd !important;
+    }
+    
+    .inputs {
+      justify-content: flex-start !important;
+      gap: 16px !important;
+    }
+    
+    .inputs fieldset {
+      flex: 1 !important;
+      margin-right: 0 !important;
+      max-width: none !important;
+    }
+    
+    .inputs fieldset input {
+      width: 100% !important;
+      max-width: none !important;
+    }
+    
+    .buttons {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+      top: 0 !important;
+      margin-top: 10px !important;
+      padding: 16px 26px !important;
+      background-color: #f9f9f9 !important;
+      border-top: 1px solid #eee !important;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
+    
+    .buttons div {
+      width: 100% !important;
+      display: flex !important;
+      gap: 8px !important;
+    }
+    
+    .buttons div .btn {
+      flex: 1 !important;
+      text-align: center !important;
+    }
+  }
+  

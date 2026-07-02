@@ -5,12 +5,12 @@ function Footer() {
         <footer style={{backgroundColor:"rgb(253,253,253)"}} className='border-top'>
         <div className='container'>
             <div className='row mt-5'>
-                <div className='col'>
-                    <img src="media\images\logo.svg" alt="logo" style={{width:"50%"}} className='mb-3'/>
+                <div className='col-12 col-sm-6 col-md-3 mb-4'>
+                    <img src="media\images\logo.svg" alt="logo" style={{width:"130px"}} className='mb-3'/>
                     <p style={{fontSize : "0.8rem"}}>&copy; 2010 - 2026, Zerodha Broking Ltd. <br />
                      All rights reserved.</p>
                 </div>
-                <div className='col linksDiv'>
+                <div className='col-12 col-sm-6 col-md-3 mb-4 linksDiv'>
                     <p>Company</p>
                     <a href=''>About</a><br/>
                     <a href=''>Philosophy</a><br/>
@@ -22,19 +22,19 @@ function Footer() {
                     <a href=''>Referral program</a><br/>
                 </div>
 
-                <div className='col linksDiv'>
+                <div className='col-12 col-sm-6 col-md-3 mb-4 linksDiv'>
                     <p>Support</p>
                     <a href=''>Contact us</a><br />
                     <a href=''>Support portal</a><br />
                     <a href=''>How to file a complaint?</a><br />
                     <a href=''>Status of your complaints</a><br />
                     <a href=''>Bulletin</a><br />
-                   <a href=''> Circular</a><br />
+                    <a href=''> Circular</a><br />
                     <a href=''>Z-Connect blog</a><br />
                     <a href=''>Downloads</a><br />
                 </div>
 
-                <div className='col linksDiv'>
+                <div className='col-12 col-sm-6 col-md-3 mb-4 linksDiv'>
                     <p>Account</p>
                     <a href=''>Open demat account</a><br></br>
                     <a href=''>Minor demat account</a><br></br>

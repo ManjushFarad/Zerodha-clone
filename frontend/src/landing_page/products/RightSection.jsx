@@ -1,21 +1,18 @@
 function RightSection({imageURL,productName,productDescription,tryDemo}) {
     return ( 
         <div className="container" style={{marginBottom:"6rem"}}>
-            <div className="row">
-            
-
-                <div className="col-6 mt-5" style={{paddingLeft:"100px", paddingTop:"50px"}}>
+            <div className="row align-items-center">
+                <div className="col-12 col-md-6 order-2 order-md-1 p-3 p-md-4">
                     <h3 className="mb-3 text-muted">{productName}</h3>
-                    <p className="mb-5 fs-6" style={{paddingRight:"100px"}}>{productDescription}</p>
+                    <p className="mb-4 fs-6">{productDescription}</p>
 
-                    <div className="">
-                        <a href={tryDemo}  style={{textDecoration:"none"}}>Try Demo <i class="fa-solid fa-arrow-right"></i></a>
+                    <div>
+                        <a href={tryDemo} style={{textDecoration:"none"}}>Try Demo <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-
                 </div>
 
-                <div className="col-6">
-                    <img src={imageURL} alt="leftImage" className="p-5"/>
+                <div className="col-12 col-md-6 order-1 order-md-2 text-center mb-4 mb-md-0">
+                    <img src={imageURL} alt="rightImage" className="img-fluid p-3 p-md-5"/>
                 </div>
             </div>
         </div>
