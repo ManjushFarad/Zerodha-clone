@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import API_URL, { FRONTEND_URL } from "../config";
+import logo from "../assets/logo.png";
 
 const Menu = ({ user }) => {
   let [selectedMenu, setSelectedMenu] = useState(0);
@@ -33,7 +34,7 @@ const Menu = ({ user }) => {
 
   return (
     <div className="menu-container">
-      <img src="/src/assets/logo.png" style={{ width: "50px" }} alt="logo" />
+      <img src={logo} style={{ width: "50px" }} alt="logo" />
       <div className="menus">
         <ul>
           <li>
