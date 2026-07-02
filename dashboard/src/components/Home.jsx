@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
+import API_URL from "../config";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const verifySession = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/check-auth", {
+        const response = await axios.get(`${API_URL}/check-auth`, {
           withCredentials: true,
         });
         if (response.data.authenticated) {

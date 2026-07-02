@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import API_URL from "../config";
 
 const Menu = ({ user }) => {
   let [selectedMenu, setSelectedMenu] = useState(0);
@@ -17,7 +18,7 @@ const Menu = ({ user }) => {
   const handleLogout = async (e) => {
     e.stopPropagation();
     try {
-      await axios.post("http://localhost:8080/logout", {}, { withCredentials: true });
+      await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
       window.location.href = "http://localhost:5173";
     } catch (err) {
       console.error("Logout failed:", err);

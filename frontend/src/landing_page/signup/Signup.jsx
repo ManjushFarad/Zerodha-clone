@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import '../Auth.css';
+import API_URL from "../../config";
 
 function Signup() {
     const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ function Signup() {
         e.preventDefault();
         setError('');
         try {
-            await axios.post("http://localhost:8080/signup", formData, {
+            await axios.post(`${API_URL}/signup`, formData, {
                 withCredentials: true,
             });
             window.location.href = "http://localhost:5174";

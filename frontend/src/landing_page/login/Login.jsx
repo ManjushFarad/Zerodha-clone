@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../Auth.css';
+import API_URL from "../../config";
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ function Login() {
         e.preventDefault();
         setError('');
         try {
-            const response = await axios.post("http://localhost:8080/login", formData, {
+            const response = await axios.post(`${API_URL}/login`, formData, {
                 withCredentials: true,
             });
             console.log('Login Response:', response.data);
@@ -34,37 +35,37 @@ function Login() {
             <div className="auth-card">
                 <h1 className="auth-title">Welcome Back</h1>
                 <p className="auth-subtitle">Log in to your account to continue.</p>
-                
+
                 {error && <div className="auth-error-message">{error}</div>}
-                
+
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="username">Username</label>
-                        <input 
-                            type="text" 
-                            id="username" 
-                            name="username" 
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
                             placeholder="Your username"
                             value={formData.username}
                             onChange={handleChange}
-                            required 
+                            required
                         />
                     </div>
                     <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
                             placeholder="••••••••"
                             value={formData.password}
                             onChange={handleChange}
-                            required 
+                            required
                         />
                     </div>
                     <button type="submit" className="auth-button">Log In</button>
                 </form>
-                
+
                 <div className="auth-link">
                     Don't have an account? <Link to="/signup">Sign up here</Link>
                 </div>

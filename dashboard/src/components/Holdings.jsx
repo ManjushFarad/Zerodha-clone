@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react";
 // import {holdings} from '../data/data'
 import axios from 'axios';
 import { HoldingsChart } from './HoldingsChart';
+import API_URL from '../config';
 
 const Holdings = () => {
 
   let [allHoldings, setAllHoldings] = useState([])
 
   useEffect(() => {
-    axios.get("http://localhost:8080/allHoldings").then((res) => {
+    axios.get(`${API_URL}/allHoldings`).then((res) => {
       setAllHoldings(res.data);
       console.log(res.data);
     })
