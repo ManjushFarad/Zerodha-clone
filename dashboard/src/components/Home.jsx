@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
-import API_URL from "../config";
+import API_URL, { FRONTEND_URL } from "../config";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -17,11 +17,11 @@ const Home = () => {
         if (response.data.authenticated) {
           setUser(response.data.user);
         } else {
-          window.location.href = "http://localhost:5173/login";
+          window.location.href = `${FRONTEND_URL}/login`;
         }
       } catch (error) {
         console.error("Session verification failed:", error);
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = `${FRONTEND_URL}/login`;
       } finally {
         setLoading(false);
       }

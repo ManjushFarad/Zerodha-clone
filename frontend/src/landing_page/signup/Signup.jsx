@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import '../Auth.css';
-import API_URL from "../../config";
+import API_URL, { DASHBOARD_URL } from "../../config";
 
 function Signup() {
     const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ function Signup() {
             await axios.post(`${API_URL}/signup`, formData, {
                 withCredentials: true,
             });
-            window.location.href = "http://localhost:5174";
+            window.location.href = DASHBOARD_URL;
         } catch (error) {
             console.error('Signup error:', error.response?.data || error.message);
             setError(error.response?.data?.error || 'Signup failed. Please try again.');

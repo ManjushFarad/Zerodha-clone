@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../Auth.css';
-import API_URL from "../../config";
+import API_URL, { DASHBOARD_URL } from "../../config";
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ function Login() {
                 withCredentials: true,
             });
             console.log('Login Response:', response.data);
-            window.location.href = "http://localhost:5174";
+            window.location.href = DASHBOARD_URL;
         } catch (error) {
             console.error('Login error:', error.response?.data || error.message);
             setError(error.response?.data?.message || error.response?.data?.error || 'Invalid username or password');

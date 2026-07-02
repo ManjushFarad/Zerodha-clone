@@ -18,7 +18,12 @@ const uri = process.env.MONGO_URL;
 
 mongoose.connect(uri);
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://zerodha-frontend-w1qf.onrender.com",
+  "https://zerodha-dashboard-te5j.onrender.com"
+];
 app.use(
   cors({
     origin: function (origin, callback) {
